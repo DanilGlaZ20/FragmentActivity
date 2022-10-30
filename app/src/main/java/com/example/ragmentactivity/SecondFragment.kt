@@ -1,5 +1,4 @@
 package com.example.ragmentactivity
-
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -28,14 +27,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_second, container, false)
-        val bckBtn=view.findViewById<Button>(R.id.bckbtn)
         Log.d("Fragment2", "Улыбаться при встрече мне.")
-        bckBtn.setOnClickListener{
-            val fragment=FirstFragment()
-            val trans=fragmentManager?.beginTransaction()
-            trans?.replace(R.id.my_navigation,fragment)?.commit()
-        }
-
         return view
     }
 
