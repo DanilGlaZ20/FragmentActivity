@@ -11,10 +11,15 @@ import android.widget.Button
 
 
 class SecondFragment : Fragment() {
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        Log.d("Fragment2", "Боль не тонет в проклятом вине,")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.d("Fragment1", "onCreate2")
+        Log.d("Fragment2", "Даже та, что любил, перестала")
     }
 
     override fun onCreateView(
@@ -24,7 +29,7 @@ class SecondFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_second, container, false)
         val bckBtn=view.findViewById<Button>(R.id.bckbtn)
-        Log.d("Fragment1", "onCreateView2")
+        Log.d("Fragment2", "Улыбаться при встрече мне.")
         bckBtn.setOnClickListener{
             val fragment=FirstFragment()
             val trans=fragmentManager?.beginTransaction()
@@ -34,44 +39,40 @@ class SecondFragment : Fragment() {
         return view
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
 
-        Log.d("Fragment1", "onAttach2")
-    }
 
     override fun onStart() {
         super.onStart()
 
-        Log.d("Fragment1", "onStart2")
+        Log.d("Fragment2", "А за что? А за то, что пью я,")
     }
 
     override fun onResume() {
         super.onResume()
 
-        Log.d("Fragment1", "onResume2")
+        Log.d("Fragment2", "Я стою никому не нужен,")
     }
 
     override fun onStop() {
-        Log.d("Fragment1", "onStop2")
+        Log.d("Fragment2", "Одинокий и пьяный, один.")
 
         super.onStop()
     }
 
     override fun onDestroyView() {
-        Log.d("Fragment1", "onDestroyView2")
+        Log.d("Fragment2", "Месяц рожу полощет в луже,")
 
         super.onDestroyView()
     }
 
     override fun onDestroy() {
-        Log.d("Fragment1", "onDestroy2")
+        Log.d("Fragment2", "С неба светит лиловый сатин.")
 
         super.onDestroy()
     }
 
     override fun onDetach() {
-        Log.d("Fragment1", "onDetach2")
+        Log.d("Fragment2", "Год публикации: 1924 г.")
 
         super.onDetach()
     }

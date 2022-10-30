@@ -12,10 +12,16 @@ import android.widget.Button
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_N
 class FirstFragment : Fragment() {
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        Log.d("Fragment1", "Автор: Сергей Есенин")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.d("Fragment1", "onCreate")
+        Log.d("Fragment1", "Месяц рожу полощет в луже,")
     }
 
     override fun onCreateView(
@@ -25,7 +31,7 @@ class FirstFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         val nxtBtn=view.findViewById<Button>(R.id.btn)
-        Log.d("Fragment1", "onCreateView")
+        Log.d("Fragment1", "С неба светит лиловый сатин.")
         nxtBtn.setOnClickListener{
             val fragment=SecondFragment()
             val trans=fragmentManager?.beginTransaction()
@@ -35,44 +41,40 @@ class FirstFragment : Fragment() {
         return view
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
 
-        Log.d("Fragment1", "onAttach")
-    }
 
     override fun onStart() {
         super.onStart()
 
-        Log.d("Fragment1", "onStart")
+        Log.d("Fragment1", "Я стою никому не нужен,")
     }
 
     override fun onResume() {
         super.onResume()
 
-        Log.d("Fragment1", "onResume")
+        Log.d("Fragment1", "Одинокий и пьяный, один.")
     }
 
     override fun onStop() {
-        Log.d("Fragment1", "onStop")
+        Log.d("Fragment1", "А хорошего в жизни мало,")
 
         super.onStop()
     }
 
     override fun onDestroyView() {
-        Log.d("Fragment1", "onDestroyView")
+        Log.d("Fragment1", "Разве можно за это ругать,")
 
         super.onDestroyView()
     }
 
     override fun onDestroy() {
-        Log.d("Fragment1", "onDestroy")
+        Log.d("Fragment1", "Коль на этой на пьяной планете")
 
         super.onDestroy()
     }
 
     override fun onDetach() {
-        Log.d("Fragment1", "onDetach")
+        Log.d("Fragment1", "Родила меня бедная мать.")
 
         super.onDetach()
     }
